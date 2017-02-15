@@ -1,0 +1,96 @@
+<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+<form name="userForm" class="form-horizontal" role="form" ng-submit="submitUser()" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">Add New User</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="Name" class="col-sm-3 control-label">Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="Name" placeholder="Isaac Solomon" ng-model="usr.name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserName" class="col-sm-3 control-label">Username</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="text"  id="UserName" placeholder="Sol" ng-model="usr.username" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserEmail" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-5">
+                <input type="email" class="form-control" id="UserEmail" placeholder="name11@gmail.com" ng-model="usr.email" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserPhone" class="col-sm-3 control-label">Phone</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserPhone" placeholder="555-555-1" ng-model="usr.phone">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserWebsite" class="col-sm-3 control-label">Website</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserWebsite" placeholder="mysite.ua" ng-model="usr.website" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserAddressCity" class="col-sm-3 control-label">City</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserAddressCity" placeholder="Kyiv" ng-model="usr.address.city">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserAddressStreet" class="col-sm-3 control-label">Street</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserAddressStreet" placeholder="Orlova st" ng-model="usr.address.street">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserAddressSuite" class="col-sm-3 control-label">Suite</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserAddressSuite" placeholder="Suite 123" ng-model="usr.address.suite">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserAddressZipcode" class="col-sm-3 control-label">Zipcode</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserAddressZipcode" placeholder="12356" ng-model="usr.address.zipcode">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserAddressLat" class="col-sm-3 control-label">Lat</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserAddressLat" placeholder="12356" ng-model="usr.address.geo.lat">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserAddressLng" class="col-sm-3 control-label">Lng</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserAddressLng" placeholder="12356" ng-model="usr.address.geo.lng">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserCompanyName" class="col-sm-3 control-label">Company Name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserCompanyName" placeholder="Roga i Koputa" ng-model="usr.company.name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserCompanyBs" class="col-sm-3 control-label">BS</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserCompanyBs" placeholder="roga koputa" ng-model="usr.company.bs">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UserCompanyCatchPhrase" class="col-sm-3 control-label">Catch Phrase</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="UserCompanyCatchPhrase" placeholder="Sell goods" ng-model="usr.company.catchPhrase">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" type="submit">Add User</button>
+    </div>
+</form>

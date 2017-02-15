@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="add-user"><button type="button" class="btn btn-primary" ng-click="addUser()">Add User
+            </button></div>
+            <label>Sort: <select ng-model="sortByProp">
+                <option ng-repeat="option in sortProperties" value="{{option}}">{{option}}</option>
+            </select></label><br/>
+            <label>Reverse:
+                <input type="checkbox" ng-model="reverseOrder">
+            </label><br/>
+            <label>Search by name: <input ng-model="searchText.name"></label><br/>
+            <label>Search by username: <input ng-model="searchText.username"></label><br/>
+            <label>Search by email: <input ng-model="searchText.email"></label><br/>
+        </div>
+        <div class="col-md-6">
+            <ul class="users">
+                <li ng-repeat="user in users |orderBy:sortByProp:reverseOrder | filter:searchText"
+                    class="thumbnail">
+                    <p>name: {{user.name}}</p>
+                    <p>username: {{user.username}}</p>
+                    <p>website: <a ng-href="http://{{user.website}}">{{user.website}}</a></p>
+                    <p>phone: {{user.phone}}</p>
+                    <p>email: {{user.email}}
+                        <button type="button" class="btn btn-primary btn-xs" copy-to-clipboard="{{user.email}}">Copy
+                        </button>
+                    </p>
+                    <p>address: {{user.address.city}} {{user.address.street}} {{user.address.suite}} {{user.address.zipcode}}</p>
+                    <p>company name: {{user.company.name}}</p>
+                    <p>company bs: {{user.company.bs}}</p>
+                    <p>company phrases: {{user.company.catchPhrase}}</p>
+                    <p>length: don't know</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
