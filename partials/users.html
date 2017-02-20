@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-6">
             <ul class="users">
-                <li ng-repeat="user in users |orderBy:sortByProp:reverseOrder | filter:searchText"
+                <li ng-repeat="user in users |orderBy:sortByProp:reverseOrder | filter:searchText track by user.name"
                     class="thumbnail">
                     <p>name: {{user.name}}</p>
                     <p>username: {{user.username}}</p>

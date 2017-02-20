@@ -15,4 +15,17 @@ angular.module('myApp.services', ['ngRoute'])
             }
             textarea.remove();
         }
+    }])
+.service('httpRequestsService', ['$http', function($http) {
+        return {
+            getUsers: function() {
+                var globalOptions={
+                    cache:true
+                };
+                var options = angular.extend({}, globalOptions);
+                return $http.get("https://jsonplaceholder.typicode.com/users",{
+                    params: options
+                });
+            }
+        };
     }]);
